@@ -1,0 +1,2 @@
+add_lunch_combo cm_cprimeltemtr-userdebug
+add_lunch_combo cm_cprimeltemtr-eng
