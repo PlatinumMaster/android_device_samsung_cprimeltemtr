@@ -16,14 +16,13 @@
 # Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/cprimeltemtr/cprimeltemtr-vendor.mk)
 
-# common msm8916
-$(call inherit-product, device/samsung/msm8916-common/msm8916.mk)
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.multisim.simslotcount=2 \
-    persist.radio.multisim.config=dsds \
-    rild.libpath2=/system/lib/libsec-ril-dsds.so
+# Device overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/cprimeltemtr/overlay
+
+# Inherit from coreprimelte-common
+$(call inherit-product, device/samsung/coreprimelte-common/common.mk)
+
